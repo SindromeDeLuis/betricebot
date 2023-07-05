@@ -1,0 +1,126 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.home .home-container {
+  display: flex;
+  color: #222222;
+  margin: 0 6vw;
+  width: 100%;
+}
+.home .home-container .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 60%;
+}
+
+.home .home-container .text .img-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.home .home-container .text .img-container img {
+  display: block;
+  height: 8vh;
+  float: left;
+  margin-right: 8px;
+}
+.home .home-container .text .img-container h1 {
+  float: left;
+}
+.home .home-container .text h2 {
+  font-size: 320%;
+  line-height: 52px;
+  margin-bottom: 32px;
+}
+/*.home .home-container .text h2 i {
+  font-size: 64px;
+}*/
+.home .home-container .text h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+.home .home-container a {
+  background: #FB6542;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.home .home-container a:hover {
+  color: cyan;
+}
+
+.home .home-container a  {
+  background: transparent;
+  color: #FB6542;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 36px;
+  border: 2px solid #FB6542;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: all 300ms;
+}
+.home .home-container a:hover {
+  background: #FB6542;
+  color: #fff;
+}
+.home .home-container .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+.home .home-container .image img {
+  position: fixed;
+  width: 40vw;
+  bottom: 0;
+  right: -16px;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+  .home .home-container {
+    flex-direction: column;
+    height: 70%;
+  }
+  .home .home-container .text {
+    width: 100%;
+  }
+  .home .home-container .text h2 {
+    font-size: 280%;
+  }
+  .home .home-container .image {
+    width: 100%;
+  }
+  .home .home-container .image img {
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home .home-container {
+    height: 100%;
+  }
+  .home .home-container .text .img-container {
+    margin-bottom: 24px;
+  }
+  .home .home-container .text h2 {
+    font-size: 240%;
+  }
+  .home .home-container .text h4 {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,293 @@
+/* this file is loaded by index.html and styles the page */
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  background: url(../images/background.webp);
+  background-size: auto;
+}
+
+.header {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  padding: 20px 6vw;
+  margin: auto;
+  position: relative;
+}
+.header .logo a {
+  font-size: 28px;
+  color: #b81414;
+  text-decoration: none;
+}
+.header .navbar {
+  display: flex;
+}
+.header .navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .navbar li,
+.header .user li {
+  position: relative;
+  list-style: none;
+  margin: 0 15px;
+  padding: 3px;
+}
+.header .navbar ul li a,
+.header .user li a,
+.header .user li p,
+.header .dropdown p,
+.header .dropdown .dropdown-content a {
+  color: #FB6542;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header .navbar ul li > a::after,
+.header .navbar .dropdown p::after,
+.header .user li > a::after {
+  content: "";
+  /*background: #800080;*/
+  background: #FB6542;
+  position: absolute;
+  border-radius: 12px;
+  bottom: -3px;
+  height: 3px;
+  left: 0;
+  transition: all 0.25s ease-out 0s;
+  width: 0;
+}
+
+.header .navbar ul li > a:hover::after,
+.header .dropdown p:hover::after,
+.header .user li > a:hover::after{
+  width: 100%;
+}
+.header .nav-icon {
+  display: none;
+}
+.header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.header .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  border-radius: 4px;
+  z-index: 10000000000;
+}
+.header .dropdown .dropdown-content a {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+}
+.header .dropdown .dropdown-content a:hover {
+  background: #d3d3d3;
+}
+.header .dropdown .show {
+  display: block;
+}
+
+.translate-page {
+  display: flex;
+  align-items: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  margin: 0 4px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.main {
+  height: 82vh;
+  width: 100%;
+  position: relative;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.copyright {
+  text-align: center;
+}
+.copyright p,
+.copyright a {
+  color: #FB6542;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.copyright a:hover {
+  text-decoration: underline;
+}
+.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    justify-content: center;
+  }
+  .footer {
+    position: relative; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    justify-content: space-between;
+    height: 8vh;
+  }
+  .header .logo {
+    display: none;
+  }
+  .header .navbar {
+    font-size: 32px;
+  }
+  .header .navbar ul {
+    background-color: #252a2e;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -80vw;
+    height: 100vh;
+    width: 80vw;
+    padding: 5vh 0 0 10px;
+    z-index: 98;
+    transition: 0.5s;
+  }
+  .header .navbar ul.show {
+    left: 0;
+  }
+  .header .navbar ul li {
+    border-bottom: 1px solid #fff;
+    padding: 10px 15px;
+    margin: 8px;
+  }
+  .header .navbar ul li:hover {
+    border-bottom-color: #b81414;
+  }
+  .header .navbar ul li a i,
+  .header .navbar ul li p i{
+    display: none;
+  }
+  .header .nav-icon {
+    display: block;
+    color: #FB6542;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 1;
+  }
+  .header .nav-icon i {
+    position: absolute;
+    display: flex;
+    align-content: flex-start;
+    top: 35%
+  }
+  .header .nav-icon i:nth-child(2) {
+    font-size: 1.25em;
+    z-index: 10000000001;
+  }
+  .header .nav-icon .hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s linear, opacity 0.25s linear;
+  }
+  .header .user li {
+    margin: 0;
+    padding: 0;
+  }
+  .hide {
+    display: flex;
+  }
+  .showli {
+    display: none !important;
+  }
+}

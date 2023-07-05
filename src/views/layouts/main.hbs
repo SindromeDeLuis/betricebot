@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="@SindromeDeLuis" />
+    <meta name="description" content="A cool thing made with Glitch" />
+
+    <title>Beatrice English Chatbot</title>
+
+    <link
+      id="favicon"
+      rel="icon"
+      href="/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="/styles/vendor/normalize.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/{{{style}}}" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav-icon">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark hide"></i>
+      </div>
+      <!--<div class="logo">
+        <a href="#"></a>
+      </div>-->
+      <div class="translate-page">
+        <span>EN</span>
+        <label class="switch">
+          <input type="checkbox" id="switch">
+          <span class="slider round"></span>
+        </label>
+        <span>ES</span>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="/"><i class="fas fa-home"></i> HOME</a>
+          </li>
+          <li>
+            <a href="/chat"><i class="fas fa-comments"></i> CHAT</a>
+          </li>
+          <li>
+            <a href="/guide"><i class="fas fa-circle-info"></i> GUIDE</a>
+          </li>
+          {{#if user}}
+            <li class="dropdown showli" id="dropdown">
+              <p><i class="fas fa-user"></i> {{this.user.fullname}} ▼</p>
+              <div class="dropdown-content" id="dropdown-content">
+                <a href="javascript: document.logoutForm.submit()" id="logout">
+                  Log out
+                </a>
+                <form
+                  name="logoutForm"
+                  action="/logout"
+                  method="post"
+                  hidden="true"
+                ><input hidden type="submit" value="Logout" />
+                </form>
+              </div>
+            </li>
+            <li class="hide">
+              <a href="javascript: document.logoutForm.submit()">
+                Log out
+              </a>
+              <form
+                name="logoutForm2"
+                action="/logout"
+                method="post"
+                hidden="true"
+              ><input hidden type="submit" value="Logout" />
+              </form>
+            </li>
+          {{else}}
+            <li>
+              <a href="/login"><i class="fas fa-user"></i> LOG IN</a>
+            </li>
+          {{/if}}
+        </ul>
+      </nav>
+      <div class="user hide">
+        {{#if user}}
+        <li>
+          <p>{{this.user.fullname}}</p>
+        </li>
+        {{else}}
+        <li>
+          <a href="/login"><i class="fas fa-user"></i> LOG IN</a>
+        </li>
+        {{/if}}
+      </div>
+    </header>
+
+    <main class="main">
+        {{{body}}}
+    </main>
+
+    <footer class="footer">
+      <div class="copyright">
+        <p>
+          Beatrice &#169; 2023 | Designed by 
+          <a
+            href="https://sindromedeluis.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Luis A Sandoval @SindromeDeLuis</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script src="/js/sideMenu.js"></script>
+  <script src="/js/translatePage.js"></script>
+  {{#if user}}
+    <script src="/js/dropdown.js"></script>
+  {{/if}}
+  {{#if script}}
+    <script src="/js/{{{script}}}"></script>
+  {{/if}}
+</html>

@@ -1,0 +1,39 @@
+  <section class="login-container">
+    <div class="contenedor__todo">
+      <div class="caja__trasera">
+        <div class="caja__trasera-login">
+          <h3>Do you already have an account?</h3>
+          <p>Login to enter the page</p>
+          <button id="btn__iniciar-sesion">Log In</button>
+        </div>
+        <div class="caja__trasera-register">
+          <h3>Don't you have an account yet?</h3>
+          <p>Register so you can log in</p>
+          <button id="btn__registrarse">Register</button>
+        </div>
+      </div>
+
+      <!--Formulario de Login y registro-->
+      <div class="contenedor__login-register">
+        <!--Login-->
+        <form action="/login" method="POST" class="formulario__login">
+          <h2>Log In</h2>
+          <input type="text" name="username" placeholder="Username" required />
+          <input type="password" name="password" placeholder="Password" required />
+          {{> error }}
+          <button type="submit">Enter</button>
+        </form>
+
+        <!--Register-->
+        <form action="/signup" method="POST" class="formulario__register">
+          <h2>Sign Up</h2>
+          <input type="text" name="fullname" placeholder="Full name" value="{{fullname}}" required />
+          <input type="email" name="email" placeholder="Email address" value="{{email}}" required />
+          <input type="text" name="username" placeholder="Username" value="{{username}}" required />
+          <input type="password" name="password" placeholder="Password" value="{{password}}" required />
+          {{> errors }}
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
