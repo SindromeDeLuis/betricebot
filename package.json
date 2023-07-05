@@ -7,7 +7,8 @@
   "description": "Chatbot for english practice.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "dependencies": {
     "@google-cloud/dialogflow": "^5.8.0",
@@ -21,9 +22,11 @@
     "express-handlebars": "^7.0.7",
     "express-session": "^1.17.3",
     "mongoose": "^7.2.4",
+    "netlify-lambda": "^2.0.16",
     "node-fetch": "^2.6.12",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "@types/dialogflow-fulfillment": "^0.6.1"

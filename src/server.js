@@ -7,6 +7,7 @@ const handlebars = require("express-handlebars");
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
+const serverless = require("serverless-http");
 
 // initializations
 const app = express();
@@ -43,9 +44,9 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use(require('./routes/index'));
-app.use(require('./routes/user'));
-app.use(require('./routes/chat'));
+app.use(`/.netlify/functions/api`, require('./routes/index'));
+app.use(`/.netlify/functions/api`, require('./routes/user'));
+app.use(`/.netlify/functions/api`, require('./routes/chat'));
 
 // Static files
 app.use(express.static("public"));
@@ -62,3 +63,8 @@ app.use((req, res) => {
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
+
+// Export the app and the serverless function
+module.exports = app;
+module.exports.handler = serverless(app);
