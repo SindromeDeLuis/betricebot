@@ -60,9 +60,9 @@ app.use((req, res) => {
 });
 
 // Server is listening
-const listener = app.listen(process.env.PORT, () => {
+/*const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
-});
+});*/
 
 
 // Export the app and the serverless function
