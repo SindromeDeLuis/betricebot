@@ -5,10 +5,10 @@
   "name": "beatrice-english-chatbot",
   "version": "1.0.0",
   "description": "Chatbot for english practice.",
-  "main": "src/server.js",
+  "main": "functions/server.js",
   "scripts": {
-    "build": "./node_modules/.bin/netlify-lambda build src",
-    "start": "./node_modules/.bin/netlify-lambda serve src"
+    "build": "netlify-lambda build src",
+    "start": "netlify-lambda serve src"
   },
   "dependencies": {
     "@google-cloud/dialogflow": "^5.8.0",
