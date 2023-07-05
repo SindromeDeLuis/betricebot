@@ -22,7 +22,7 @@
     "express-handlebars": "^7.0.7",
     "express-session": "^1.17.3",
     "mongoose": "^7.2.4",
-    "netlify-lambda": "^2.0.16",
+    "netlify-lambda": "^1.6.3",
     "node-fetch": "^2.6.12",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
@@ -32,7 +32,7 @@
     "@types/dialogflow-fulfillment": "^0.6.1"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "repository": {
     "url": "https://github.com/SindromeDeLuis/betricebot"
