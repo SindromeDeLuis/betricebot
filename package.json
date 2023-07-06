@@ -28,9 +28,6 @@
   "devDependencies": {
     "@types/dialogflow-fulfillment": "^0.6.1"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "repository": {
     "url": "https://github.com/SindromeDeLuis/betricebot"
   },
