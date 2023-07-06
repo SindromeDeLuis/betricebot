@@ -29,7 +29,7 @@
     "@types/dialogflow-fulfillment": "^0.6.1"
   },
   "engines": {
-    "node": "6.0.0"
+    "node": "12.0.0"
   },
   "repository": {
     "url": "https://github.com/SindromeDeLuis/betricebot"
