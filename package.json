@@ -5,14 +5,13 @@
   "name": "beatrice-english-chatbot",
   "version": "1.0.0",
   "description": "Chatbot for english practice.",
-  "main": "functions/server.js",
+  "main": "src/server.js",
   "scripts": {
-    "build": "netlify-lambda build src",
-    "start": "netlify-lambda serve src"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "@google-cloud/dialogflow": "^5.8.0",
-    "actions-on-google": "^2.4.1",
+    "actions-on-google": "^3.0.0",
     "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
@@ -27,9 +26,10 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/dialogflow-fulfillment": "^0.6.1",
-    "netlify-lambda": "^1.6.3",
-    "serverless-http": "^3.2.0"
+    "@types/dialogflow-fulfillment": "^0.6.1"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "repository": {
     "url": "https://github.com/SindromeDeLuis/betricebot"
